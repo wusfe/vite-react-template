@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import reactLogo from './assets/react.svg';
-
+import { Button } from 'antd';
 function App() {
   const [count, setCount] = useState(0);
 
@@ -20,7 +20,9 @@ function App() {
         </a>
       </div>
       <h1 className="my-20 font-semibold text-6xl">Vite + React</h1>
-      
+
+
+      <Button type="primary">按钮</Button>
       <p className="opacity-40">
         Click on the Vite and React logos to learn more
       </p>
