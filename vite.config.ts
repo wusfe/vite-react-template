@@ -3,7 +3,6 @@ import { defineConfig } from 'vite'
 import vitePluginImp from 'vite-plugin-imp';
 import react from '@vitejs/plugin-react'
 import UnoCSS from 'unocss/vite'
-
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -11,7 +10,7 @@ export default defineConfig({
     UnoCSS(),
     // antd4 需要开启此部分
     vitePluginImp({
-      optimize: true,
+      optimize: false,
       libList: [
         {
           libName: 'antd',
@@ -19,8 +18,6 @@ export default defineConfig({
         },
       ],
     }),
-
-    
   ],
   server: {
     host: '0.0.0.0'
@@ -42,6 +39,10 @@ export default defineConfig({
       less: {
         javascriptEnabled: true,
         // 如需定制 antd 主题，请取消以下内容注释 https://ant.design/docs/react/customize-theme
+
+        // // modifyVars: {},
+        // additionalData: `@import "@packages/styles/theme.less";`
+
         modifyVars: {
           hack: `true; @import "./src/theme.less";`,
         },
