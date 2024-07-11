@@ -1,12 +1,14 @@
+import * as path from 'path';
 import { defineConfig } from 'vite'
 import vitePluginImp from 'vite-plugin-imp';
 import react from '@vitejs/plugin-react'
-import * as path from 'path';
+import UnoCSS from 'unocss/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
+    UnoCSS(),
     // antd4 需要开启此部分
     vitePluginImp({
       optimize: true,
@@ -17,6 +19,8 @@ export default defineConfig({
         },
       ],
     }),
+
+    
   ],
   server: {
     host: '0.0.0.0'
